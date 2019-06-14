@@ -1,30 +1,23 @@
 <template>
   <div>
-    <div class="title">Information</div>
     <div class="items">
       <div class="item">
-        <div class="name">Path:</div>
-        <div class="value">{{ path }}</div>
+        <div class="name">配置管理</div>
       </div>
       <div class="item">
-        <div class="name">Route Name:</div>
-        <div class="value">{{ name }}</div>
+        <div class="name">权限管理</div>
       </div>
       <div class="item">
-        <div class="name">Vue.js:</div>
-        <div class="value">{{ vue }}</div>
+        <div class="name">人员管理</div>
       </div>
       <div class="item">
-        <div class="name">Electron:</div>
-        <div class="value">{{ electron }}</div>
+        <div class="name">数据统计</div>
       </div>
       <div class="item">
-        <div class="name">Node:</div>
-        <div class="value">{{ node }}</div>
+        <div class="name">数据分析</div>
       </div>
       <div class="item">
-        <div class="name">Platform:</div>
-        <div class="value">{{ platform }}</div>
+        <div class="name">通知权限</div>
       </div>
     </div>
   </div>
@@ -54,16 +47,22 @@
     margin-top: 10px;
   }
 
-  .items { margin-top: 8px; }
+  .items { 
+    margin-top: 8px; 
+
+  }
 
   .item {
     display: flex;
-    margin-bottom: 6px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100px;
   }
 
   .item .name {
+    width: 100px;
     color: #6a6a6a;
-    margin-right: 6px;
+    text-align: center;
   }
 
   .item .value {

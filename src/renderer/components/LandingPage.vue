@@ -1,29 +1,23 @@
 <template>
   <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+    <!-- <img id="logo" src="~@/assets/logo.png" alt="electron-vue"> -->
+    <div class="topStyle">
+      <img src="~@/assets/head.png" alt="" class="headImg">
+      <div class="top_item">系统设置</div>
+      <div class="top_item">人员分配</div>
+      <div class="top_item">职务划分</div>
+      <div class="top_item">临时通知</div>
+      <div class="top_item">个人中心</div>
+    </div>
     <main>
       <div class="left-side">
-        <span class="title">
-          Welcome to your new project!
-        </span>
         <system-information></system-information>
       </div>
 
       <div class="right-side">
-        <div class="doc">
-          <div class="title">Getting Started</div>
-          <p>
-            electron-vue comes packed with detailed documentation that covers everything from
-            internal configurations, using the project structure, building your application,
-            and so much more.
-          </p>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
-        </div>
-        <div class="doc">
-          <div class="title alt">Other Documentation</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-        </div>
+        
+        <router-view></router-view>
+
       </div>
     </main>
   </div>
@@ -38,6 +32,9 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      openBd () {
+        console.log('dfsa')
       }
     }
   }
@@ -54,6 +51,33 @@
 
   body { font-family: 'Source Sans Pro', sans-serif; }
 
+  .topStyle {
+    width: 100%;
+    height: 50px;
+    border: 1px solid seagreen;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(77, 80, 218, 0.9)
+  }
+  .headImg{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .top_item{
+    width: 70px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+
   #wrapper {
     background:
       radial-gradient(
@@ -62,9 +86,11 @@
         rgba(229, 229, 229, .9) 100%
       );
     height: 100vh;
-    padding: 60px 80px;
-    width: 100vw;
+    /* padding: 60px 80px; */
+    width: 100%;
   }
+
+  
 
   #logo {
     height: auto;
@@ -77,11 +103,19 @@
     justify-content: space-between;
   }
 
-  main > div { flex-basis: 50%; }
+  
 
   .left-side {
+    width: 130px;
     display: flex;
     flex-direction: column;
+    border:1px solid seagreen;
+  }
+
+  .right-side{
+    width: 100%;
+    height: 100%;
+    border:1px solid salmon;
   }
 
   .welcome {
